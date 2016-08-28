@@ -1,0 +1,88 @@
+body{
+			background-image:url('macro.jpg');
+			background-repeat:no-repeat;background-position:center;
+			-webkit-background-size: 100% 100%;
+			-moz-background-size: 100% 100%;
+			-o-background-size: 100% 100%;
+			background-size: 100% 100%;
+			margin: 0px;
+			padding: 0px;
+			overflow-x: hidden; 
+			}
+		#chess{left:6%;}
+		p{font-weight:bold;font-size:20px;align:center;}
+		#U2{color:white}
+		#U1{color:#ffcc33}
+		.block{  height:12.5%;width:10%;
+				border:1px solid black;
+				border-radius:10px;
+				}
+		
+		.h2{border-radius:0px;box-shadow:0px 0px 0px black;}
+		#chess
+				{
+				position:relative;
+				animation:move 3s 1;
+				-moz-animation:move 3s 1; /* Firefox */
+				-webkit-animation:move 3s 1; /* Safari and Chrome */
+				-o-animation:move 3s 1; /* Opera */
+				}
+				
+				#User1,#User2
+				{
+				position:relative;
+				animation:mymove 3s 1;
+				-moz-animation:mymove 3s 1; /* Firefox */
+				-webkit-animation:mymove 3s 1; /* Safari and Chrome */
+				-o-animation:mymove 3s 1; /* Opera */
+				
+				border-radius:30px;
+				}
+				#wel{
+				position:relative;
+				animation:mymove1 5s 1;
+				-moz-animation:mymove1 5s 1; /* Firefox */
+				-webkit-animation:mymove1 5s 1; /* Safari and Chrome */
+				-o-animation:mymove1 5s 1; /* Opera */
+				
+				}
+			@keyframes move /* Safari and Chrome */
+			{
+			0%   {transform:scale(0)}
+
+			100% {transform:  scale(100px)}
+			
+			}
+			@keyframes mymove /* Firefox */
+			{
+			0%   {transform:translateY(1000px)}
+
+			100% {transform: translateY(0px)}
+			}
+			@keyframes mymove1 /* Firefox */
+			{
+			0%   {opacity:.1;text-shadow:0px 0px 10px white;}
+
+			100% {opacity:1;text-shadow:10px 10px 40px white;}
+			}
+			.button{background-color:#ff6600;
+			height:45px;width:120px;
+			font-weight:bold;
+			border:0px solid white;
+			font-size:20px;
+			text-shadow:4px 4px 10px #000000;
+			}
+			input[type="text"]{background-color:#ffffff;
+			border:1px solid gray;
+				height:40px;width:200px;
+				font-size:20px;
+				border-radius:5px;
+				background-image:none;
+				background-size:35px 30px;
+				background-repeat:no-repeat;
+				background-position:right;}
+		#FU{background-image:url('WhitePawn1.png');}	
+		#SU{background-image:url('GrayPawn1.png');}
+		a{color:white;}
+		#htp{font-weight:bold;
+			font-size:1.5vw;}

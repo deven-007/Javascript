@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="chess.css">
+		<link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+		<title>Checkmate</title>
+		<meta name="viewport" content="initial-scale=1">
+		
+	</head>
+	<body id="chessbody" onload="setTimeout(function(){document.getElementById('wel1').style.display='none';document.getElementById('register').style.display='block';document.getElementById('info').style.display='block';},4000);">
+	<div id="wel1" style="position:absolute;z-index:2;background-color:transparent;height:100%;width:100%;">
+	<h2 id="wel" align="center" style="color:white;font-weight:bold;font-size:7vw;top:10%;">Welcome To My ChessBoard</h2>
+	</div>
+	<div id="info" style="position:absolute;z-index:5;background-color:transparent;height:100%;width:40%;display:none;">
+		<ul style="font-size:1.2vw;font-weight:bolder;color:black;">
+			<li>Instruction -->
+				<ol type="1">
+				<li>This is a two player chess game</li>
+				<li>Players must play in co-ordination</li>
+				<li>A player must warn another player before elimination King</li>
+				<li>Either of two player can make first move</li>
+				<li>Please Play it in Google Chrome Browser for better experience </li>
+				<li>This is a Bita version so kindely send BUG report (if any) to <a target="_blank" href="https://www.gmail.com">13bit154@nirmauni.ac.in </a></li>
+				</ol><br/>
+				<ul type="disk">
+					<li>This version of chess does not include following rules
+						<ol type="1">
+							<li>Pawns will move one step whether it's first move</li>
+							<li>No “en passant,” which is French for “in passing”</li>
+							<li>No Castling</li>
+						</ol>
+					</li>
+					<li> Wonder about "How To Play" and Rules visit following link &darr;</li><br/>
+					<a id="htp" href="http://www.chess.com/learn-how-to-play-chess" target="_blank">How To Play<a/>
+				</ul>
+			</li>
+			
+		</ul>
+		</ul>
+	</div>
+	<div id="register" border="2" style="position:absolute;left:10%;z-index:5;background-color:transparent;height:200px;top:20%;width:100%;display:none;">
+		<form method="get" align="center">
+			&nbsp;&nbsp;&nbsp;<input type="text" id="FU" placeholder="First User" maxlength="15"></input>&nbsp;<br/><br/>
+			&nbsp;&nbsp;&nbsp;<input type="text" id="SU" placeholder="Second User" maxlength="15"></input>&nbsp;<br/><br/><br/>
+			<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="button" id="regok" value="OK" onclick="
+			document.getElementById('chessbody').style.backgroundImage='url(macro1.jpg)';
+			document.getElementById('player1').innerHTML = document.getElementById('FU').value;
+			document.getElementById('player2').innerHTML = document.getElementById('SU').value;
+			document.getElementById('register').style.display='none';
+			document.getElementById('copyright').style.display='none';
+			document.getElementById('info').style.display='none';
+			document.getElementById('User1').style.display='block';document.getElementById('User2').style.display='block';document.getElementById('chess').style.display='block';
+			
+			"></input>
+		</form>
+	</div>
+	
+	<div id="gameover" style="position:absolute;left:0%;top:0%;width:100%;height:100%;z-index:7;background-color:#33ff66;border:0px solid black;display:none;">
+		<p id="gameovertext" style="font:70px bold;font-weight:bolder;color:#ff6600;margin-top:5%;margin-left:15%;"></p>
+		<input type="submit" class="button" id="restart" value="Restart" style="margin-top:0px;margin-left:250px;" onclick="document.getElementById('gameover').style.display='none';location.reload();"></input>
+		<img src="win.gif" style="left:40%;position:absolute;top:10%;height:80%;width:40%;"/>
+	</div>
+	<div id="drawn" style="position:absolute;left:0%;top:0%;width:100%;height:100%;z-index:7;background-color:#33ff66;border:0px solid black;display:none;">
+		<p id="drawtext" style="font:120px bold;font-weight:bolder;color:#ff6600;margin-top:10%;margin-left:27%;">Draw</p>
+	</div>
+	
+	<div height="100%" width="100%" >
+		
+	<div id="User1" style="position:relative;float:left;height:100%;width:20%;z-index:1;display:none;">
+		
+		<h2 align="center" id="player1" class="h2" style="font-weight:bold;font-size:30px;color:#ffcc33;background-color:white;">Player 1</h2>
+		<p id="U1">Moves:</p>
+		<input type="button" style="position:absolute;top:90%" class="button" value="I resign" onclick="if(confirm('Are you sure you want to resign?')){
+		document.getElementById('drawn').style.display='block';
+		document.getElementById('drawtext').innerHTML= 'Player resigned<br/>Game Draw';
+		setTimeout(function(){document.getElementById('drawn').style.display='none';location.reload();},3500);
+		}"></input>
+	</div>
+		<div id="chess" style="display:none;position:relative;float:left;height:100%;width:60%;">
+		<form method="post" action="">
+				
+			<script type="text/javascript" src="chess.js">
+				
+			
+			</script>
+		
+		</div>
+		<div id="User2" style="position:relative;float:right;height:100%;width:20%;display:none;">
+			<h2 align="center" id="player2" class="h2" style="font-weight:bold;font-size:30px;color:black;background-color:white;">Player 2</h2>
+			<p id="U2">Moves:</p>
+			<input type="button" style="position:absolute;top:90%;" class="button" value="I resign" onclick="if(confirm('Are you sure you want to resign?')){
+		document.getElementById('drawn').style.display='block';
+		document.getElementById('drawtext').innerHTML= 'Player resigned<br/>Game Draw';
+		setTimeout(function(){document.getElementById('drawn').style.display='none';location.reload();},3500);
+		}"></input>
+		</div>
+		<p id="copyright" style="position:absolute;float:right;color:black;;height:20px;width:200px;left:80%;top:90%;display:block;">
+			&copy;Devendra Mishra
+		</p>
+		</form>
+		</div>
+	</body>
+</html>
